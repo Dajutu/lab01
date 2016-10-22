@@ -1,0 +1,42 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class Kara05 here.
+ * 
+ * @author (Daniela Tumbraegel)
+ * @author (Josefine Busch)
+ * @version (21.10.2016)
+ */
+public class Kara05 extends Kara
+{
+    /**
+     * Act - do whatever the Kara05 wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    boolean movingRight = true;
+    
+    public void toLeaforNottoLeaf()
+    {if(onLeaf()){
+            removeLeaf();
+        } else {
+            putLeaf();
+          }
+    }
+    public void act() 
+    {   toLeaforNottoLeaf();
+         move();
+        if (treeFront()&&movingRight){
+            movingRight = true;
+            toLeaforNottoLeaf();
+            turnRight();
+            move();
+            turnRight();
+        if (treeFront()&&movingRight){
+            movingRight = false;
+            turnLeft();
+            move();
+            turnLeft();
+           }
+        }
+    }
+}

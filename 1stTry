@@ -1,9 +1,3 @@
-public class Kara05 extends Kara
-{
-    /**
-     * Act - do whatever the Kara05 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     boolean movingRight = true;
     
     public void toLeaforNottoLeaf()
@@ -17,17 +11,17 @@ public class Kara05 extends Kara
     {   toLeaforNottoLeaf();
          move();
         if (treeFront()&&movingRight){
-            movingRight = true;
+            movingRight = false;
             toLeaforNottoLeaf();
             turnRight();
             move();
-            turnRight();
-        if (treeFront()&&movingRight){
-            movingRight = false;
+            turnRight();}
+        else if (treeFront()&&!movingRight){
+            movingRight = true;
+            toLeaforNottoLeaf();
             turnLeft();
             move();
-            turnLeft();
-           }
+            turnLeft();   
         }
     }
 }

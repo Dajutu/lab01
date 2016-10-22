@@ -1,0 +1,27 @@
+    boolean movingRight = true;
+    
+    public void toLeaforNottoLeaf()
+    {if(onLeaf()){
+            removeLeaf();
+        } else {
+            putLeaf();
+          }
+    }
+    public void act() 
+    {   toLeaforNottoLeaf();
+         move();
+        if (treeFront()&&movingRight){
+            movingRight = false;
+            toLeaforNottoLeaf();
+            turnRight();
+            move();
+            turnRight();}
+        else if (treeFront()&&!movingRight){
+            movingRight = true;
+            toLeaforNottoLeaf();
+            turnLeft();
+            move();
+            turnLeft();   
+        }
+    }
+}
